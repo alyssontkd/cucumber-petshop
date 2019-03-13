@@ -1,0 +1,15 @@
+## Erros conhecidos da Automação do SGE
+
+
+#### Erro ao Selecionar um botão
+##### Problema
+`O capybara/selenium não consegue clicar em um link ou botão da aplicação.`
+##### Percepção do Problema
+`Encontramos esse erro no momento de realizar o login na aplicação. Não estavamos encontrando o botão de "LOGIN" pelo Capybara.`
+##### Solução Encontrada
+```
+Quando um componente do SGE contiver o atributo unselectable="on", o capybara/selenium não conseguira clicar sobre o elemento. 
+A solução encontrada foi buscar o elemento que estava no nível superior ao elemento que possuia o texto "Login".
+
+Ex: find("span[class='x-btn-button']", :text => 'Login').click
+```

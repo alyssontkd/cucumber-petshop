@@ -1,0 +1,10 @@
+.idea
+.idea/*
+log/screenshots/*.png
+log/*.html
+log/features.html
+log/*.json
+log/resultado.json
+*.lock
+Gemfile.lock
+features/support/config.yml

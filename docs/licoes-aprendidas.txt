@@ -1,0 +1,11 @@
+# Este documento reúne todos os erros conhecidos do Decessos
+
+# Pontos de Atenção
+
+## Realização de Dump de Produção em Homologação/QA
+Quando realizar um DUMP do ambiente de Produção para o ambiente de Homologação, terá que alterar o caminho de uma integração, acessível dentro do Corp. Por exemplo: O servidor de QA está acessível no endereço `testesge01.poupex.com.br:17500/poupex/`. Quando, pelo Corp, acesso `MANUTENÇÃO > TABELAS > SISTEMA > CONFIGURAÇÃO > BASE DE DADOS AUXILIAR` ("Base de dados Auxiliar" é o título de uma aba que está lá no final das abas) temos um usuário, senha e ambiente operacional preenchidos. Esses dados são gravados na base de dados e deverão ser alterados para que aponte para o seu ambiente, sempre que um dump for realizado de um ambiente de produção. Caso esteja como `hmlsrvsge01.poupex.com.br:17400/poupex` ou `sge01.poupex.com.br:3389/poupex`, altere para seu ambiente, que no caso de QA é `testesge01.poupex.com.br:17500/poupex/`.
+
+## Arquivo de integrações do SGE
+O arquivo que armazena todos os serviços utilizados pelo SGE estão disponíveis em `/home/poupex/dados/arqs/poupex/servicoweb.ini`. Um ponto de atenção é que nenhum dos serviços pode ter o termo `?wsdl` no final da URL do serviço.
+
+## Verificar os arquivos existentes no diretório `/home/poupex/dados/arqs`, pois exsitem vários arquivos necessários para o funcionamento da aplicação que não fazem parte do pacote de instalação.

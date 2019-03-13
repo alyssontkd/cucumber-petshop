@@ -1,0 +1,49 @@
+# Este documento reúne o sql para consulta (Schema Homolog) de CPFs para cadastro de clientes. 
+
+Cenario: Cadastrar cliente que (Caminho feliz):
+ 
+    - Não é titular ou agregado;
+    - Ter de 14 a 65 anos.
+    - Esteja vivo;
+    - Tenha matricula ativa;
+    - Não tenha impedimento;
+    - Não tenha FAM, FFA, SSE e DEC;
+    - Tenha endereço cadastrado;
+    - Que esteja dentro dos segmentos conveniados.
+ 
+ #SQL:
+ 
+ SELECT PF.NR_CPF 
+ FROM   BD_CLIENTE.PESSOA P 
+        INNER JOIN BD_CLIENTE.PESSOA_FISICA PF 
+                ON P.ID_PESSOA = PF.ID_PESSOA 
+        INNER JOIN BD_CLIENTE.MATRICULA MA 
+                ON MA.ID_PESSOA = P.ID_PESSOA 
+        INNER JOIN BD_CLIENTE.PESSOA_ENDERECO PE 
+                ON PE.ID_PESSOA = P.ID_PESSOA 
+        LEFT JOIN BD_CLIENTE.PESSOA_IMPEDIMENTO PI 
+               ON PI.ID_PESSOA = P.ID_PESSOA 
+ WHERE  P.ID_PESSOA NOT IN (SELECT DISTINCT ID_PESSOA 
+                            FROM   DECESSOS.CLIENTE) -- NÃO EXISTE NA FRONTEIRA DO DEC 
+        AND P.ID_PESSOA NOT IN (SELECT DISTINCT ID_PESSOA 
+                                FROM   BD_CLIENTE.PESSOA_PRODUTO 
+                                WHERE  COD_PRODUTO IN ( 1, 8, 19, 29, 
+                                                        30, 31, 32 )) -- NÃO TEM FAM, FFA, SSE e DEC 
+        AND PI.ID_PESSOA_IMPEDIMENTO IS NULL -- NÃO TEM IMPEDIMENTO 
+        AND PF.DT_NASC IS NOT NULL -- NASCEU 
+        AND TRUNC(PF.DT_NASC) BETWEEN TO_DATE('01/01/1965', 'dd/MM/YYYY') AND TO_DATE('01/01/2004', 'dd/MM/YYYY') -- IDADE ENTRE 14 E 65 ANOS 
+        AND MA.ST_ATIVO = 'S' -- POSSUI MATRÍCULA ATIVA 
+        AND MA.COD_SEGMENTO IN ( 1, 2, 3, 4, 
+                                 5, 6, 7, 8, 
+                                 20, 21 ); -- SEGMENTOS CONVENIADOS
+                                                               
+                                 
+                                 
+                                 
+  
+                                 
+
+                                 
+                                 
+                                  
+    
