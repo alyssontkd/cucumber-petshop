@@ -4,6 +4,7 @@ source "http://rubygems.org"
 
 gem 'cucumber'
 gem 'faker'
+gem 'poltergeist'
 #gem 'headless'
 #gem 'rspec'
 #gem 'selenium-webdriver'
