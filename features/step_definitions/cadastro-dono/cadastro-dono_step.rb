@@ -6,7 +6,7 @@ Dado("que eu abra a tela de abertura de chamado") do
 end
 
 Quando("eu registro um novo chamado para reportar um incidente no ERP") do
-  @novochamado = CadastroChamado.new
+  @novochamado = CadastroDono.new
   @novochamado.acionar_menu_macarrao
   @novochamado.menu_novo_chamado
 end
