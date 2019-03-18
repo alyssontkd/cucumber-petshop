@@ -1,4 +1,4 @@
-class CadastroChamado < SitePrism::Page
+class CadastroDono < SitePrism::Page
   include Capybara::DSL
 
   element :todos_menus,  "#menu_all_button"
