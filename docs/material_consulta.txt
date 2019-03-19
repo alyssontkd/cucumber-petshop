@@ -17,6 +17,9 @@ google-chrome-stable --headless --disable-gpu --no-sandbox --run-all-compositor-
 google-chrome-stable --headless --disable-gpu --no-sandbox --run-all-compositor-stages-before-draw --window-size=1920x1080 --print-to-pdf https://google.com
 google-chrome-stable --headless --disable-gpu --no-sandbox --run-all-compositor-stages-before-draw --window-size=1920x1080 --print-to-pdf https://galaxpay.com.br
 ```
+```
+/usr/bin/chromium --headless --disable-gpu --no-sandbox --run-all-compositor-stages-before-draw --window-size=1920x1080 --print-to-pdf https://google.com
+```
 
 
 ##### Trocando de driver para executar alguns cenários
