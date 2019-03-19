@@ -7,7 +7,7 @@ gem 'faker'
 gem 'poltergeist'
 #gem 'headless'
 gem 'rspec'
-#gem 'selenium-webdriver'
+gem 'selenium-webdriver'
 gem 'site_prism'
 
 #group :test,:development do
