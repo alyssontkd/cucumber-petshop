@@ -5,7 +5,7 @@ require 'capybara/cucumber'
 require 'site_prism'
 #require 'faker'
 #require 'rubygems'
-#require 'rspec'
+require 'rspec'
 #require 'rspec/retry'
 
 
