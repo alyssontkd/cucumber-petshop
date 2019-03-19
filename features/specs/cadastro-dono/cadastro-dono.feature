@@ -11,6 +11,6 @@
       @cadastrar-dono
       Cenário: Cadastrar novo dono de pet
 
-        Dado que eu abra a tela de abertura de chamado
+        Dado que eu abra a tela principal do sistema e abra o cadastro de donos
         Quando eu registro um novo chamado para reportar um incidente no ERP
         Então devo receber uma notificacão de que o chamado foi aberto

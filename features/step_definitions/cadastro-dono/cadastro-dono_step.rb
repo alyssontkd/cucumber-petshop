@@ -1,8 +1,8 @@
 include RSpec::Matchers
 
-Dado("que eu abra a tela de abertura de chamado") do
-  @login = LoginPage.new
-  @login.faz_login_usuario
+Dado("que eu abra a tela principal do sistema e abra o cadastro de donos") do
+  @pagina_inicial = PaginaInicial.new
+  @pagina_inicial.acessa_cadastro_donos
 end
 
 Quando("eu registro um novo chamado para reportar um incidente no ERP") do
