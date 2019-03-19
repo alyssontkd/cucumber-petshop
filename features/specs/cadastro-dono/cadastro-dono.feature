@@ -1,16 +1,16 @@
 #language:pt
 
-  Funcionalidade: Casdastrar chamado no GLPI
+  Funcionalidade: Cadastrar um Dono de Animalzinho em Nosso PetShop
 
-    Como um usuário comum
-    Quero abrir um chamado
-    Para receber o serviço solicitado
+    Como um usuário do sistema de PetShop
+    Quero cadastrar um dono de Animalzinho
+    Para registrar os serviços e produtos adquiridos em seu nome
 
-    Contexto: Acessar o GLPI e logar no sistema
+    Contexto: Acessar a tela principal do sistema de Petshop
 
       @cadastrar-dono
-      Cenário: Cadastrar novo dono de pet
+      Cenário: Cadastrar o dono de animalzinho no sistema
 
         Dado que eu abra a tela principal do sistema e abra o cadastro de donos
-        Quando eu registro um novo chamado para reportar um incidente no ERP
-        Então devo receber uma notificacão de que o chamado foi aberto
+        Quando eu insiro todos os dados do dono do animalzinho
+        Então devo receber uma notificacão de que o dono foi inserido com sucesso

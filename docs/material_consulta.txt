@@ -1,5 +1,7 @@
 ## Comando úteis para as implementações
 
+https://medium.com/@reiload_88128/estudando-os-comandos-do-capybara-ruby-f0f5152847f7
+
 #####
 Desabilitar o Modo Visual do VIM via editor (temporário) e via arquivo de perfil (definitivo)
 ```
