@@ -8,7 +8,7 @@ gem 'poltergeist'
 #gem 'headless'
 #gem 'rspec'
 #gem 'selenium-webdriver'
-gem 'site_prism'
+gem 'site_prism' 
 
 #group :test,:development do
 #  gem 'capybara'
