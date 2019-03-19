@@ -3,12 +3,9 @@ require 'capybara/cucumber'
 require 'site_prism'
 require 'rspec'
 
-
 AMBIENTE = ENV['AMBIENTE']
 CONFIG = YAML.load_file(File.dirname(__FILE__) + "/ambientes/#{AMBIENTE}.yml")
 CUSTOM = YAML.load_file(File.dirname(__FILE__) + "/config.yml")
-
-
 
 Capybara.register_driver(:xxxxxx) do |app|
 

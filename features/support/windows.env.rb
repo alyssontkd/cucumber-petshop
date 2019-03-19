@@ -1,9 +1,8 @@
 require 'capybara'
 require 'capybara/cucumber'
 require 'site_prism'
+require 'selenium/webdriver'
 require 'rspec'
-
-
 
 AMBIENTE = ENV['AMBIENTE']
 CONFIG = YAML.load_file(File.dirname(__FILE__) + "/ambientes/#{AMBIENTE}.yml")
